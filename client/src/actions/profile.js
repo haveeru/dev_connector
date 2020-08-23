@@ -27,7 +27,7 @@ export const createProfile = (formData, history, edit = false) => async (
   try {
     const config = {
       headers: {
-        'Content-Type': 'applicatioin/json',
+        'Content-Type': 'application/json',
       },
     };
     const res = await axios.post('/api/profile', formData, config);
