@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Spinner from '../layout/Spinner';
 import { getCurrentProfile } from '../../actions/profile';
+import DashboardAction from './DashboardAction';
 
 const Dashboard = ({
   getCurrentProfile,
@@ -27,7 +28,9 @@ const Dashboard = ({
         </i>
       </p>
       {profile !== null ? (
-        <Fragment>has</Fragment>
+        <Fragment>
+          <DashboardAction />
+        </Fragment>
       ) : (
         <Fragment>
           <p>You have not yet setup a profile, please add some info</p>

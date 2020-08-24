@@ -71,15 +71,15 @@ router.post(
     if (bio) profileFields.bio = bio;
     if (status) profileFields.status = status;
     if (githubusername) profileFields.githubusername = githubusername;
-    if (skills) {
-      profileFields.skills = Array.isArray(skills)
-            ? skills
-            : skills.split(',').map((skill) => ' ' + skill.trim())
-    }
-    
     // if (skills) {
-    //   profileFields.skills = skills.split(',').map((skill) => skill.trim());
+    //   profileFields.skills = Array.isArray(skills)
+    //         ? skills
+    //         : skills.split(',').map((skill) => ' ' + skill.trim())
     // }
+    
+    if (skills) {
+      profileFields.skills = skills.split(',').map((skill) => skill.trim());
+    }
 
     console.log(profileFields.skills);
 
