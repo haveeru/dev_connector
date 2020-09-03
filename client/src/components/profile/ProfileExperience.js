@@ -17,7 +17,7 @@ const ProfileExperience = ({
     </p>
     <p>
       <strong>Description: </strong>
-      {title}
+      {description}
     </p>
   </div>
 );
