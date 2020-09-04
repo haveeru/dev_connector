@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Spinner from '../layout/Spinner';
 import { getPost } from '../../actions/post';
 import PostItem from '../Posts/PostItem';
+import CommentForm from './CommentForm';
 
 const Post = ({ getPost, post: { post, loading }, match }) => {
   useEffect(() => {
@@ -14,10 +15,11 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
     <Spinner />
   ) : (
     <Fragment>
-        <Link to={'/posts'} className="btn">
-            Back To Posts
-        </Link>
+      <Link to={'/posts'} className="btn">
+        Back To Posts
+      </Link>
       <PostItem post={post} showActions={false} />
+      <CommentForm postId={post._id} />
     </Fragment>
   );
 };
