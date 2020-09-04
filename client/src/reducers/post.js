@@ -21,7 +21,8 @@ export default function (state = initialState, action) {
       case ADD_POST:
       return {
         ...state,
-        posts: [...state.posts, payload],
+        //latest posts first if ...state.post is used first lates posts will be at bottom
+        posts: [payload, ...state.posts],
         loading: false,
       };
 
